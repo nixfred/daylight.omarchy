@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "nixfred.daylight",
+  "name": "Daylight",
+  "version": "1.0.0",
+  "author": "nixfred",
+  "license": "MIT",
+  "description": "Sun and moon ephemeris for your spot on Earth, computed locally with the NOAA solar equations and Meeus lunar theory. No network, python3 stdlib only. Bar: sun or moon glyph plus the countdown to the next sunrise or sunset. Panel: a daylight arc with the sun's position now, golden and blue hour bands, every twilight, day length and its change vs yesterday, and the moon's phase, illumination, rise, set and next full and new moon.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Daylight",
+    "description": "Sun or moon glyph with the time to the next sunrise or sunset. Click for the full sun and moon cockpit.",
+    "category": "Info",
+    "aliases": ["sun", "moon", "sunrise", "sunset", "daylight", "ephemeris", "golden hour"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "lat": "",
+      "lon": "",
+      "place": "",
+      "showCountdown": true
+    },
+    "schema": [
+      {
+        "key": "lat",
+        "type": "string",
+        "label": "Latitude",
+        "description": "Decimal degrees, north positive. Empty uses ~/.config/daylight/location.json, else Atlanta (33.749).",
+        "defaultValue": ""
+      },
+      {
+        "key": "lon",
+        "type": "string",
+        "label": "Longitude",
+        "description": "Decimal degrees, east positive. Empty uses the settings file, else Atlanta (-84.388).",
+        "defaultValue": ""
+      },
+      {
+        "key": "place",
+        "type": "string",
+        "label": "Place name",
+        "description": "Label shown in the panel header.",
+        "defaultValue": ""
+      },
+      {
+        "key": "showCountdown",
+        "type": "boolean",
+        "label": "Show countdown",
+        "description": "Time to the next sunrise or sunset beside the glyph. Off leaves just the glyph.",
+        "defaultValue": true
+      }
+    ]
+  },
+  "repository": "https://github.com/nixfred/daylight.omarchy",
+  "homepage": "https://nixfred.com"
+}
